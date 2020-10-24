@@ -1,0 +1,88 @@
+{%extends 'base.html'%}
+{%load static%}
+
+
+
+
+{%block body_block%}
+
+
+
+
+<!--OUR WEBSITE VIDEO-->
+
+<video id="vidcontent" width="500" height="281" autoplay muted="muted" loop="loop">
+  <source src="{% static 'videos/base.mp4'%}" type="video/mp4">
+  
+</video>
+ <style>
+#vidcontent {
+  width:100%;
+  height:100;
+  object-fit:cover; /* for those who do support it */
+}
+</style>
+<!--OUR WEBSITE VIDEO ENDS HERE-->
+
+<!--
+
+<div style="color: #707070">
+  <h1 style="text-align: center">The mission of our hotel is to provide outstanding lodging facilities and services to our guests. Our hotel focuses on individual business and leisure travel, as well as travel associated with groups meetings . we emphasise high quality standards in our rooms and food and beverage divisions</h1>
+
+
+-->
+
+
+<div  style="color:green;background-color:pink">
+<marquee width="100%" direction="right" height="25px" >
+WE HAVE GOOD NEW FOR YOU ROOMS ARE AVAILABLE AT DISCOUNTED PRICE 
+</marquee>
+</div>
+
+
+
+
+
+
+
+
+<div class="container">
+
+<div class="row  ">
+
+{% for i in hotel%}
+
+    <div class=" col-sm-12 col-md-6 col-lg-4 col-xs-3  ">
+<div class="card card-block mt-3 ">
+  <a href="{{i.image.url}}" target="_blank">
+  <img class="card-img-top"  alt="100%x180" src="{{i.image.url}}" data-holder-rendered="true" style="height: 180px; width: 100%; display: block;">
+</a>
+  <div class="card-block container ">
+    <i class="fa fa-address-card"></i> : {{i.hotel_address}}
+     <div><i class="fa fa-mobile"></i> :  {{i.hotel_mobile}}</div>
+     Availablity :<span style='color:green'> {{i.room_availability}}</span>
+     price : {{i.price}}
+
+    <p> Update on : {{i.updated_at}}</p>
+     <center><a class="btn btn-success" href="{%url 'contact'%}" role="button">Book Now</a></center>
+
+
+  </div>
+  </div>
+</div>
+   
+{%endfor%}
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+<br>
+
+{%endblock%}

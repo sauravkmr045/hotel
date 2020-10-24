@@ -1,0 +1,238 @@
+{%extends 'base.html'%} {% load static %} {%block body_block%}
+
+
+<!--
+
+<video id="vidcontent" width="500" height="281" autoplay muted="muted" loop="loop">
+  <source src="{% static 'videos/base.mp4'%}" type="video/mp4">
+  
+</video>
+ <style>
+#vidcontent {
+  width:100%;
+  height:100;
+  object-fit:cover; /* for those who do support it */
+}
+</style>
+
+
+-->
+
+
+
+<div class="xyz" style="text-align: center">
+
+    <div class="" style="margin-top: 20px">
+
+
+
+        <div class="row mt-5 text-center">
+            <div class="col-lg-3 col-sm-6 mydivstyle">
+                <h4><i class="fa fa-mobile"></i> Contact </h4>
+                <p class="mt-3 font-weight-bold"> <a style="color:black" href="tel: +91 8979067956"> +91 8979067956 <br>(City Center Cottage) </a></i>
+                </p>
+                <hr>
+                <p class="mt-3 font-weight-bold"> <a style="color:black" href="tel: +91 9718687788"> +91 9718687788 <br>(Crystal Cottage) </a></i>
+                </p>
+                <hr>
+                <p class="mt-3 font-weight-bold"> <a style="color:black" href="tel: +91 9718687788"> +91 9718687788 <br>(Happy Stay Cottage) </a></i>
+                </p><br>
+
+
+
+
+            </div>
+
+
+            <div class="col-lg-3 col-sm-6 mydivstyle">
+                <h4><i class="fa fa-envelope" aria-hidden="true"></i> Email </h4>
+                <p class="mt-3 font-weight-bold"> <a style="color:black" href="mailto: citycentercottage@gmail.com"> citycentercottage@gmail.com </a></i>
+                </p><br>
+                <hr>
+                <p class="mt-3 font-weight-bold"> <a style="color:black" href="mailto: crystalcottage201009@gmail.com"> crystalcottage201009@gmail.com </a></i>
+                </p><br>
+                <hr>
+                <p class="mt-3 font-weight-bold"> <a style="color:black" href="mailto: happystaycottage@gmail.com"> happystaycottage@gmail.com </a></i>
+                </p><br>
+
+
+            </div>
+
+
+
+            <div class="col-lg-3 col-sm-6 mydivstyle">
+                <h4><i class="fa fa-address-card"></i></i> Address </h4>
+                <p class="mt-3 font-weight-bold"> <a style="color:black" class="" href="https://www.google.com/maps/place/OYO+69626+City+Center+Cottage/@28.5789343,77.3525548,17z/data=!3m1!4b1!4m8!3m7!1s0x390ce587dc07e3b7:0x856a15d798a5d6c5!5m2!4m1!1i2!8m2!3d28.5789343!4d77.3547435"> 1, Lal Building, near Community Center Sector-35, Morna,Noida 201301 </a></i>
+                </p>
+                <hr>
+                <p class="mt-3 font-weight-bold"> <a style="color:black" href="https://www.google.com/maps/place/OYO+60970+Crystal+Cottage/@28.6279029,77.4507606,17z/data=!4m18!1m9!3m8!1s0x390cefa032eb92cb:0x5c4c2ded1850039a!2sOYO+60970+Crystal+Cottage!5m2!4m1!1i2!8m2!3d28.6278982!4d77.4529493!3m7!1s0x390cefa032eb92cb:0x5c4c2ded1850039a!5m2!4m1!1i2!8m2!3d28.6278982!4d77.4529493"> 559, Karan Enclave Rd, Chipiyana Buzurg, Noida, Uttar Pradesh 201009</a></i>
+                </p>
+                <hr>
+                <p class="mt-3 font-weight-bold"> <a style="color:black" href="https://www.google.com/maps/place/OYO+61805+Happy+Stay/@28.4580294,77.4605488,12z/data=!4m11!1m2!2m1!1shappy+stay+cottage+noida!3m7!1s0x390ceb8b3259bfa7:0xe333b9dff2ac2bd4!5m2!4m1!1i2!8m2!3d28.4580294!4d77.5305866">A1 A Sector 49 Noida Opposite Thana 49  Noida </a></i>
+                </p>
+
+
+
+            </div>
+
+
+
+            <div class="col-lg-3 col-sm-6 mydivstyle">
+                <h4><i class="fa fa-business-time"></i> Working Hour </h4>
+                <p class="mt-3 font-weight-bold t">24 X 7 </p><br>
+                <p></p>
+                <hr>
+                <p class="mt-3 font-weight-bold ">24 X 7 </p><br>
+                <hr>
+                <p class="mt-3 font-weight-bold ">24 X 7 </p><br>
+
+            </div>
+
+
+        </div>
+
+
+
+
+        {%if msg%}
+
+        <h3 style="color:yellow">{{msg|title}} </h3>
+
+        {%else%}
+
+
+        <h3 class="container" style="color:blue">Plese fill the form for booking or any Query we will get back to you soon.</h3>
+
+        {%endif%}
+
+
+
+        <!--Section description-->
+
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!------ Include the above in your HEAD tag ---------->
+
+        <div class="container contact-form">
+            <div class="contact-image">
+                <img src="{% static 'images/logo.jpg'%}" alt="rocket_contact" />
+            </div>
+            <form method="POST">
+
+                {%csrf_token%}
+                <h3>Contact Us</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Your Name *" value="" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="email" class="form-control" placeholder="Your Email *" value="" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="mobile" class="form-control" placeholder="Your Phone Number *" value="" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <textarea name="message" class="form-control" placeholder="Your Message *" required style="width: 100%; height: 150px;"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
+
+
+
+
+
+
+        <style type="text/css">
+            body {
+                background: -webkit-linear-gradient(left, #f5d0ea, #f5d0ea);
+            }
+            
+            .contact-form {
+                background: #fff;
+                margin-top: 10%;
+                margin-bottom: 5%;
+                width: 70%;
+            }
+            
+            .contact-form .form-control {
+                border-radius: 1rem;
+            }
+            
+            .contact-image {
+                text-align: center;
+            }
+            
+            .contact-image img {
+                border-radius: 6rem;
+                width: 11%;
+                margin-top: -3%;
+                transform: rotate(29deg);
+            }
+            
+            .contact-form form {
+                padding: 14%;
+            }
+            
+            .contact-form form .row {
+                margin-bottom: -7%;
+            }
+            
+            .contact-form h3 {
+                margin-bottom: 8%;
+                margin-top: -10%;
+                text-align: center;
+                color: #0062cc;
+            }
+            
+            .contact-form .btnContact {
+                width: 50%;
+                border: none;
+                border-radius: 1rem;
+                padding: 1.5%;
+                background: #dc3545;
+                font-weight: 600;
+                color: #fff;
+                cursor: pointer;
+            }
+            
+            .btnContactSubmit {
+                width: 50%;
+                border-radius: 1rem;
+                padding: 1.5%;
+                color: #fff;
+                background-color: #f2f7f6;
+                border: none;
+                cursor: pointer;
+            }
+        </style>
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+
+
+
+
+        {% endblock %}

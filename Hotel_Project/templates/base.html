@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+{%load static%}
+<html lang="en" dir="ltr"> 
+
+
+<head> 
+<!-- Latest compiled and FontAwesome CSS -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Latest compiled and minified CSS -->
+
+
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+ 
+ <meta charset="utf-8">
+  <title></title>
+   </head> 
+   <body  style="background-color: #C8C8C8">
+<!-----------------------------------------NAVIGATION BAR STARTS HERE------------------------------------------->
+<nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
+  <img src="{%static 'images/logo.jpg'%}" width="80" alt ="No image" height="40">&nbsp; &nbsp; &nbsp;
+   <a class="navbar-brand" href="{%url 'home'%}" style="font-size:140%;color:cyan;text-align: center" >Cottage Group</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navlinks" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navlinks" style="font-size:110%">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{%url 'home'%}" style="color: orange" >Home</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="{%url 'services'%}" style="color: orange">Services</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="{%url 'contact'%}" style="color: orange">Contact Us</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: pink">अतिथि देवो भवः</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'booking'%}" style="color: pink">My Booking</a>
+      </li>
+
+
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+<li>
+        <a class="nav-link" href="#">
+
+                    <img src="{% static 'images/yt.jpg'%}" alt ="No image" width="20" height="20" class="d-inline-block align-top" alt=""> 
+
+                  </a>
+      </li>
+
+&nbsp; &nbsp; 
+
+
+<li>
+        <a class="nav-link" href="#">
+
+                    <img src="{% static 'images/tw.jpg'%}" alt ="No image" width="20" height="20" class="d-inline-block align-top" alt=""> 
+
+                  </a>
+      </li>
+
+
+
+
+
+<li>
+       <a class="nav-link" href="#">
+
+                    <img src="{% static 'images/fb.jpg'%}" alt ="No image" width="20" height="20" class="d-inline-block align-top" alt=""> </a>
+      </li>
+
+&nbsp; &nbsp; 
+
+  <li>
+        <a class="nav-link" href="#">
+
+                    <img src="{% static 'images/inst.jpg'%}" alt ="No image" width="20" height="20" class="d-inline-block align-top" alt=""> 
+
+                  </a>
+      </li>
+
+  
+
+ &nbsp; &nbsp; &nbsp; &nbsp; 
+ <!-- Login and Signup link will be added here -->
+
+ <li class="nav-item">
+
+ {% if user.is_authenticated %}
+        
+        <a class="nav-link" href="{%url 'glogout'%}" style="color: orange">  Logout</a>
+
+        
+
+        {% else %}
+        <a class="nav-link" href="{%url 'glogin'%}" style="color: orange">Login</a>
+          
+      </li>
+       {% endif %}
+
+
+    </ul>
+  </div>
+
+</nav>
+
+
+ <br> <br>
+
+<!--ENTER YOUR BODY DATA HERE-->
+
+
+
+
+{%block body_block%}
+
+
+<br><br><br>
+
+<br><br><br>
+
+
+{%endblock%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--FOOTER CODE STARTS HERE -->
+
+  <!-- Site footer -->
+    <footer class="site-footer" style="background-color: black">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+             <h6 style="color:#f7f5ed">About</h6>
+            <p class="text-justify"style="color:#f7f5ed"> <i> <img src="{%static 'images/logo.jpg'%}" width="80" alt ="No image" height="40"> </i>Cottage Group is one of the most recognizable for the Room Service in Noida. It’s not just a place to sleep while you are on vacation – it’s your dream place to immerse into atmosphere of relaxation, freedom and lots of entertainments. We cater the first-class services on each level – luxury hotel rooms, great services, restaurant and, of course, the best staff. Simply a home for your unforgettable time and best camera pictures.</p>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6 style="color:#f7f5ed">&nbsp; &nbsp; &nbsp; &nbsp; FACILITES WE OFFER</h6>
+            <ul class="footer-links">
+              <li style="color:#f7f5ed">24-Hour room service</li>
+              <li style="color:#f7f5ed;">Free WIFI</li>
+              <li style="color:#f7f5ed;">Laundry service</li>
+              <li style="color:#f7f5ed;">A/C Conditioned Room</li>
+              <li style="color:#f7f5ed;">24-Hour doctor on call</li>
+                          
+              
+             
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6 style="color:#f7f5ed">&nbsp; &nbsp; &nbsp; &nbsp; Quick Links</h6>
+            <ul class="footer-links">
+              
+              <li><a href="{%url 'contact'%}"style="color:#f7f5ed;" target="_blank">Contact Us</a></li>
+              <li><a href="{%url 'services'%}"style="color:#f7f5ed;" target="_blank">Services</a></li>
+              <li><a href="{%url 'home'%}"style ="color:#f7f5ed;" target="_blank">Home</a></li>
+              
+              <li style="color:#f7f5ed ">Follow us on </a></li>
+              <li class="nav-item"> <a href="#" class="nav-link" target="_blank">
+            <img src="{% static 'images/yt.jpg'%}" alt ="No image" width="20" height="20" class="d-inline-block align-top">
+             </a> </li>
+
+              
+
+             <li class="nav-item"> <a href="#" class="nav-link" target="_blank">
+            <img src="{% static 'images/fb.jpg'%}" alt ="No image" width="20" height="20" class="d-inline-block align-top">
+             </a> </li>
+
+             <li class="nav-item"> <a href="#" class="nav-link" target="_blank">
+            <img src="{% static 'images/inst.jpg'%}" alt ="No image" width="20" height="20" class="d-inline-block align-top">
+             </a> </li>
+
+
+            <li class="nav-item"> <a href="#" class="nav-link" target="_blank">
+            <img src="{% static 'images/tw.jpg'%}" alt ="No image" width="20" height="20" class="d-inline-block align-top">
+             </a> </li>
+
+             
+
+              
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+           
+
+            <p class="copyright-text"style="color:#f7f5ed" class="container">Copyright &copy; 2020 All Rights Reserved by <i>Cottage Group</i><br> Developed and Maintained by Saurav Kumar
+            </p>
+          </div>
+
+         
+        </div>
+      </div>
+</footer>
+
+<style type="text/css">
+  li{
+    list-style-type:none;
+  }
+</style>
+<!-- FOOTER CODE ENDS HERE-->
+
+<!------------------------------------ BOOTSTRAP JQUERY AND JAVASCRIPT CDN---------------------------------->
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+ <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script> -->
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
